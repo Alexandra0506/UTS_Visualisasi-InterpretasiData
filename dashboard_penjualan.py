@@ -23,7 +23,7 @@ sns.set_style("whitegrid")
 # --------------------------------------------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r'C:\Users\Acer\Downloads\Copy of finalProj_df - df.csv', parse_dates=["order_date", "registered_date"])
+    df = pd.read_csv("finalProj_df.csv", parse_dates=["order_date", "registered_date"])
     df["order_month"] = df["order_date"].dt.to_period("M").dt.to_timestamp()
     return df
 
@@ -190,3 +190,4 @@ st.plotly_chart(fig5, use_container_width=True)
 # --------------------------------------------------------------
 st.markdown("---")
 st.caption("© 2025 Dashboard Analitik Promosi — dikembangkan untuk analisis efektivitas promosi dan perilaku pelanggan e-commerce.")
+
